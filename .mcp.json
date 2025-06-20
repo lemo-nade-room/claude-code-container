@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "bunx",
+      "args": [
+        "@playwright/mcp@latest",
+        "--browser",
+        "chromium",
+        "--user-data-dir",
+        "./.mcp-profile",
+        "--headless",
+        "--isolated",
+        "--no-sandbox"
+      ]
+    }
+  }
+}

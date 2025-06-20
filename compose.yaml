@@ -1,0 +1,15 @@
+services:
+  claude:
+    image: claude-code:latest
+    build:
+      context: .
+    environment:
+      FIGMA_API_KEY: ${FIGMA_API_KEY}
+      MATTERMOST_WEBHOOK_URL: ${MATTERMOST_WEBHOOK_URL}
+    ports:
+      - '8080:8080'
+    tty: true
+    volumes:
+      - ".:/claude/workspace"
+      - "${HOME}/.claude:/claude/.claude"
+      - "${HOME}/.claude.json:/claude/.claude.json"
