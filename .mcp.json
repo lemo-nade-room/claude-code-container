@@ -39,6 +39,35 @@
         "FASTMCP_LOG_LEVEL": "ERROR",
         "AWS_DOCUMENTATION_PARTITION": "aws"
       }
+    },
+    "mcp-svelte-docs": {
+      "command": "bunx",
+      "args": [
+        "-y",
+        "mcp-svelte-docs"
+      ]
+    },
+    "canva-dev": {
+      "command": "bunx",
+      "args": [
+        "-y",
+        "@canva/cli@latest",
+        "mcp"
+      ]
+    },
+    "github": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "ghcr.io/github/github-mcp-server"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${env:GH_TOKEN}"
+      }
     }
   }
 }
