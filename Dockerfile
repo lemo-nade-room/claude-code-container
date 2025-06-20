@@ -118,6 +118,12 @@ RUN bunx playwright@latest install chromium
 RUN bunx playwright@latest install-deps chromium
 
 # ================================
+# AWS MCP
+# ================================
+RUN brew install uv
+RUN uv python install 3.10
+
+# ================================
 # Setup
 # ================================
 COPY setup.sh /claude/setup.sh
