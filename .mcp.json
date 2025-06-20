@@ -20,6 +20,15 @@
         "figma-developer-mcp",
         "--stdio"
       ]
+    },
+    "terraform": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "hashicorp/terraform-mcp-server"
+      ]
     }
   }
 }

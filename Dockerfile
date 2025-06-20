@@ -38,18 +38,25 @@ RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true && \
     libssl-dev \
     inotify-tools \
     jq \
+    uidmap \
+    kmod \
+    iptables \
+    docker.io \
     && rm -r /var/lib/apt/lists/*
 
+# ================================
+# User
+# ================================
 RUN echo 'claude ALL=(ALL) NOPASSWD:ALL' | sudo tee /etc/sudoers.d/claude
 RUN useradd --user-group --create-home --system --skel /dev/null --home-dir /claude claude
+RUN usermod -aG docker claude
 USER claude:claude
 WORKDIR /claude
 
 # ================================
 # Docker
 # ================================
-RUN curl -fsSL https://get.docker.com -o get-docker.sh
-RUN sudo sh get-docker.sh
+ENV DOCKER_HOST="unix:///var/run/docker.sock"
 
 # ================================
 # Open Tofu
@@ -109,3 +116,11 @@ RUN echo "alias claude-force='claude --dangerously-skip-permissions'" >> /claude
 # ================================
 RUN bunx playwright@latest install chromium
 RUN bunx playwright@latest install-deps chromium
+
+# ================================
+# Setup
+# ================================
+COPY setup.sh /claude/setup.sh
+RUN sudo chmod +x /claude/setup.sh
+ENTRYPOINT ["/claude/setup.sh"]
+CMD ["/bin/bash"]
