@@ -12,6 +12,14 @@
         "--isolated",
         "--no-sandbox"
       ]
+    },
+    "figma": {
+      "command": "bunx",
+      "args": [
+        "-y",
+        "figma-developer-mcp",
+        "--stdio"
+      ]
     }
   }
 }
