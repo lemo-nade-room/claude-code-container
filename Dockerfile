@@ -40,7 +40,8 @@ RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true && \
     uidmap \
     kmod \
     iptables \
-    docker.io
+    docker.io \
+    socat
 
 # ================================
 # Locale
