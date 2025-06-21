@@ -41,6 +41,7 @@ RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true && \
     kmod \
     iptables \
     docker.io \
+    docker-compose-v2 \
     socat
 
 # ================================
@@ -116,6 +117,8 @@ RUN brew install deno
 RUN brew install cloudflare-wrangler
 RUN brew install neovim
 RUN brew install uv
+RUN brew install openapi-generator
+RUN brew install pict
 RUN brew unlink swift
 RUN brew cleanup -s && rm -rf $(brew --cache)
 
