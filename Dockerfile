@@ -119,6 +119,7 @@ RUN brew install neovim
 RUN brew install uv
 RUN brew install openapi-generator
 RUN brew install pict
+RUN brew install awscli
 RUN brew unlink swift
 RUN brew cleanup -s && rm -rf $(brew --cache)
 
