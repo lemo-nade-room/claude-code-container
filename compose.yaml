@@ -7,7 +7,6 @@ services:
     ports:
       - '8080:8080'
     tty: true
-    stdin_open: true
     volumes:
       - ".:/claude/workspace"
       - "${HOME}/.claude:/claude/.claude"

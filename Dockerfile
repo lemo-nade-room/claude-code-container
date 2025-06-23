@@ -42,7 +42,8 @@ RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true && \
     iptables \
     docker.io \
     docker-compose-v2 \
-    socat
+    socat \
+    screen
 
 # ================================
 # Locale
