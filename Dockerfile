@@ -42,7 +42,10 @@ RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true && \
     iptables \
     docker.io \
     docker-compose-v2 \
-    socat
+    socat \
+    screen \
+    docker-buildx \
+    openssh-client
 
 # ================================
 # Locale
@@ -120,6 +123,7 @@ RUN brew install uv
 RUN brew install openapi-generator
 RUN brew install pict
 RUN brew install awscli
+RUN brew install mint
 RUN brew unlink swift
 RUN brew cleanup -s && rm -rf $(brew --cache)
 

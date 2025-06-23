@@ -7,9 +7,12 @@ services:
     ports:
       - '8080:8080'
     tty: true
-    stdin_open: true
     volumes:
+      - "home:/claude"
       - ".:/claude/workspace"
       - "${HOME}/.claude:/claude/.claude"
       - "${HOME}/.claude.json:/claude/.claude.json"
+      - "${HOME}/.gitconfig:/claude/.gitconfig"
       - "/var/run/docker.sock:/var/run/docker.sock"
+volumes:
+  home:
