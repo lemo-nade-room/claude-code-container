@@ -1,11 +1,9 @@
 services:
-  claude:
+  dev:
     image: lemonaderoom/claude-code:latest
     environment:
       FIGMA_API_KEY: ${FIGMA_API_KEY}
       GH_TOKEN: ${GH_TOKEN}
-    ports:
-      - '8080:8080'
     tty: true
     volumes:
       - "home:/claude"
