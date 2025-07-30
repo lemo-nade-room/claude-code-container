@@ -40,6 +40,14 @@
         "AWS_DOCUMENTATION_PARTITION": "aws"
       }
     },
+    "awslabs.aws-pricing-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.aws-pricing-mcp-server@latest"
+      ],
+      "disabled": false,
+      "autoApprove": []
+    },
     "mcp-svelte-docs": {
       "command": "bunx",
       "args": [
