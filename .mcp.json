@@ -55,6 +55,22 @@
         "mcp-svelte-docs"
       ]
     },
+    "figma-desktop": {
+      "type": "sse",
+      "url": "http://127.0.0.1:3845/sse"
+    },
+    "serena": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server"]
+    },
+    "context7": {
+      "command": "bunx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    },
+    "deepwiki": {
+      "command": "bunx",
+      "args": ["-y", "mcp-deepwiki@latest"]
+    },
     "canva-dev": {
       "command": "bunx",
       "args": [

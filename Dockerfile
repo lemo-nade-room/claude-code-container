@@ -138,7 +138,7 @@ RUN sudo chown -R claude:claude /claude/workspace
 # ================================
 # Claude Code
 # ================================
-RUN bun install -g @anthropic-ai/claude-code@1.0.24
+RUN bun install -g @anthropic-ai/claude-code
 ENV PATH="/claude/.bun/bin:${PATH}"
 RUN echo "alias claude-force='claude --dangerously-skip-permissions'" >> /claude/.bashrc
 
