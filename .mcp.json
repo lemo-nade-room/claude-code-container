@@ -13,13 +13,9 @@
         "--no-sandbox"
       ]
     },
-    "figma": {
-      "command": "bunx",
-      "args": [
-        "-y",
-        "figma-developer-mcp",
-        "--stdio"
-      ]
+    "Figma": {
+      "type": "http",
+      "url": "http://127.0.0.1:3845/mcp"
     },
     "terraform": {
       "command": "docker",
@@ -55,10 +51,6 @@
         "mcp-svelte-docs"
       ]
     },
-    "figma-desktop": {
-      "type": "sse",
-      "url": "http://127.0.0.1:3845/sse"
-    },
     "serena": {
       "command": "uvx",
       "args": ["--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server"]
@@ -78,20 +70,6 @@
         "@canva/cli@latest",
         "mcp"
       ]
-    },
-    "github": {
-      "command": "docker",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "-e",
-        "GITHUB_PERSONAL_ACCESS_TOKEN",
-        "ghcr.io/github/github-mcp-server"
-      ],
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "${env:GH_TOKEN}"
-      }
     }
   }
 }
