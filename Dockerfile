@@ -115,6 +115,7 @@ RUN brew install aws-sam-cli
 RUN brew install swift-format
 RUN brew install tree
 RUN brew install xh
+RUN brew install node
 RUN brew install oven-sh/bun/bun
 RUN brew install deno
 RUN brew install cloudflare-wrangler
@@ -124,6 +125,7 @@ RUN brew install openapi-generator
 RUN brew install pict
 RUN brew install awscli
 RUN brew install mint
+RUN brew install mise
 RUN brew unlink swift
 RUN brew cleanup -s && rm -rf $(brew --cache)
 
@@ -139,7 +141,7 @@ RUN sudo chown -R claude:claude /claude/workspace
 # Claude Code
 # ================================
 RUN bun install -g @anthropic-ai/claude-code@latest
-ENV PATH="/claude/.bun/bin:${PATH}"
+RUN echo 'export PATH="/claude/.bun/bin:$PATH"' >> /claude/.bashrc
 RUN echo "alias claude-force='claude --dangerously-skip-permissions'" >> /claude/.bashrc
 
 # ================================
